@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "Your mod id",
+  "version": "${version}",
+  "name": "Your mod name",
+  "description": "",
+  "authors": [
+    "Your name"
+  ],
+  "contact": {},
+  "license": "Your license",
+  "icon": "",
+  "environment": "Your mod environment",
+  "entrypoints": {
+    "tcreplacer": [
+      "salt.mmmjjkx.tcapi.test"
+    ]
+  },
+  "mixins": [
+    "Your mixins.json"
+  ],
+  "depends": {
+    "Your dependencies": null
+  }
+}
