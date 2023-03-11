@@ -7,6 +7,7 @@
     <groupId>salt.mmmjjkx</groupId>
     <artifactId>titlechanger-api</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <description>Adds title replacer to Minecraft Mod TitleChanger.</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -14,4 +15,101 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <licenses>
+      <license>
+        <name>Server Side Public License</name>
+        <url>https://www.mongodb.com/licensing/server-side-public-license</url>
+        <distribution>repo</distribution>
+        <comments>A not business-friendly OSS license</comments>
+      </license>
+    </licenses>
+
+    <scm>
+      <url>https://github.com/LinsMinecraftStudio/titlechanger-api</url>
+      <connection>https://github.com/LinsMinecraftStudio/titlechanger-api</connection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>mmmjjkx</name>
+            <id>mmmjjkx</id>
+            <email>tygfhk@outlook.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <profiles>
+        <profile>
+            <id>ossrh</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <gpg.executable>gpg</gpg.executable>
+                <gpg.passphrase>12345ssdlkBB</gpg.passphrase>
+            </properties>
+        </profile>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.2.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.5.0</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/groups/public/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
