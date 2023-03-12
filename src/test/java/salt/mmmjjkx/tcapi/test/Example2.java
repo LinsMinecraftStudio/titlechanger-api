@@ -1,11 +1,12 @@
 package salt.mmmjjkx.tcapi.test;
 
-import salt.mmmjjkx.titlechanger.api.TCTitleReplacer;
+import salt.mmmjjkx.titlechanger.api.TCTitleRealTimeReplacer;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
-public class Example implements TCTitleReplacer {
+public class Example2 implements TCTitleRealTimeReplacer {
     /*
      * This is an example of TCTitleReplacer.
      * You should register at "entrypoints" in fabric.
@@ -13,12 +14,18 @@ public class Example implements TCTitleReplacer {
      */
     @Override
     public String replacerName() {
-        return "test";
+        return "example2";
     }
 
     @Override
     public String replace(String title) {
-        title = title.replaceAll("%example%","example");
+        title = title.replaceAll("%example%", String.valueOf(new Random().nextInt(200)));
+        return title;
+    }
+
+    @Override
+    public String ifPlayerNull(String title) {
+        title = title.replaceAll("%example%", "example when player is null");
         return title;
     }
 

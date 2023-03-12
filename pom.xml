@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>salt.mmmjjkx</groupId>
+    <groupId>io.github.linsminecraftstudio</groupId>
     <artifactId>titlechanger-api</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>Adds title replacer to Minecraft Mod TitleChanger.</description>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -26,7 +26,7 @@
 
     <scm>
         <url>https://github.com/LinsMinecraftStudio/titlechanger-api</url>
-        <connection>https://github.com/LinsMinecraftStudio/titlechanger-api</connection>
+        <connection>https://github.com/LinsMinecraftStudio/titlechanger-api.git</connection>
     </scm>
 
     <developers>
@@ -49,14 +49,8 @@
             </activation>
             <properties>
                 <gpg.executable>gpg</gpg.executable>
-                <gpg.passphrase>12345ssdlkBB</gpg.passphrase>
+                <gpg.passphrase>12345ssdlk</gpg.passphrase>
             </properties>
-        </profile>
-        <profile>
-            <id>default</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -65,6 +59,7 @@
                         <version>3.2.1</version>
                         <executions>
                             <execution>
+                                <id>attach-sources</id>
                                 <phase>package</phase>
                                 <goals>
                                     <goal>jar-no-fork</goal>
@@ -78,6 +73,7 @@
                         <version>3.5.0</version>
                         <executions>
                             <execution>
+                                <id>attach-javadocs</id>
                                 <phase>package</phase>
                                 <goals>
                                     <goal>jar</goal>
@@ -91,6 +87,7 @@
                         <version>3.0.1</version>
                         <executions>
                             <execution>
+                                <id>sign-artifacts</id>
                                 <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
@@ -98,16 +95,27 @@
                             </execution>
                         </executions>
                     </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
                 </plugins>
             </build>
             <distributionManagement>
                 <snapshotRepository>
                     <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/groups/public/</url>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
                 </snapshotRepository>
                 <repository>
                     <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
         </profile>

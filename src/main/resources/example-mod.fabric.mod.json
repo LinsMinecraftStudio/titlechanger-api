@@ -13,7 +13,10 @@
   "environment": "Your mod environment",
   "entrypoints": {
     "tcreplacer": [
-      "salt.mmmjjkx.tcapi.test"
+      "salt.mmmjjkx.tcapi.test.Example"
+    ],
+    "tcrealtimereplacer": [
+      "salt.mmmjjkx.tcapi.test.Example2"
     ]
   },
   "mixins": [

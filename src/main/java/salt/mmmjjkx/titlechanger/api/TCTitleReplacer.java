@@ -14,12 +14,6 @@ public interface TCTitleReplacer {
     String replace(String title);
 
     /*
-     * If the player is null, this method will be executed.
-     * @param title
-     */
-    String ifPlayerNull(String title);
-
-    /*
      * Variables
      */
     List<String> variables();
