@@ -16,3 +16,4 @@ dependencies {
    minecraftLibrary 'io.github.linsminecraftstudio:titlechanger-api:1.0'
 }
 ```
+You can find it [here (Maven Repository)](https://mvnrepository.com/artifact/io.github.linsminecraftstudio/titlechanger-api).
