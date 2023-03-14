@@ -6,7 +6,9 @@
 
     <groupId>io.github.linsminecraftstudio</groupId>
     <artifactId>titlechanger-api</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+    <name>titlechanger-api</name>
+    <url>https://github.com/LinsMinecraftStudio/titlechanger-api</url>
     <description>Adds title replacer to Minecraft Mod TitleChanger.</description>
 
     <properties>

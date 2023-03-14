@@ -6,18 +6,19 @@ import java.util.List;
 public class TCTitleForgeReplacerManager {
     private static final List<TCTitleReplacer> replacers = new ArrayList<>();
     private static final List<TCTitleRealTimeReplacer> realTimeReplacers = new ArrayList<>();
-    private static final List<String> names = new ArrayList<>();
+    private static final List<String> replacersNames = new ArrayList<>();
+    private static final List<String> realTimeReplacersNames = new ArrayList<>();
     private static final List<String> variables = new ArrayList<>();
 
     public static void register(TCTitleReplacer replacer){
         replacers.add(replacer);
-        names.add(replacer.replacerName());
+        replacersNames.add(replacer.replacerName());
         variables.addAll(replacer.variables());
     }
 
     public static void register(TCTitleRealTimeReplacer replacer){
         realTimeReplacers.add(replacer);
-        names.add(replacer.replacerName());
+        realTimeReplacersNames.add(replacer.replacerName());
         variables.addAll(replacer.variables());
     }
 
@@ -27,6 +28,7 @@ public class TCTitleForgeReplacerManager {
     public static List<TCTitleRealTimeReplacer> getRealTimeReplacers() {
         return realTimeReplacers;
     }
-    public static List<String> getReplacerNames() {return names;}
+    public static List<String> getReplacerNames() {return replacersNames;}
+    public static List<String> getRealTimeReplacersNames() {return realTimeReplacersNames;}
     public static List<String> getReplacersVariables() {return variables;}
 }
