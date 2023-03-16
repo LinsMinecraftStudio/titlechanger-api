@@ -17,3 +17,6 @@ dependencies {
 }
 ```
 You can find it [here (Maven Repository)](https://mvnrepository.com/artifact/io.github.linsminecraftstudio/titlechanger-api).
+## Examples
+Example 1(Common title replacer): https://github.com/LinsMinecraftStudio/titlechanger-api/blob/main/src/test/java/salt/mmmjjkx/tcapi/test/Example.java  
+Example 2(Real time title replacer): https://github.com/LinsMinecraftStudio/titlechanger-api/blob/main/src/test/java/salt/mmmjjkx/tcapi/test/Example2.java
