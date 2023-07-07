@@ -11,14 +11,12 @@ public class TCTitleForgeReplacerManager {
     private static final List<String> variables = new ArrayList<>();
 
     public static void register(TCTitleReplacer replacer){
+        if (replacer instanceof TCTitleRealTimeReplacer r) {
+            realTimeReplacers.add(r);
+            realTimeReplacersNames.add(r.replacerName());
+        }
         replacers.add(replacer);
         replacersNames.add(replacer.replacerName());
-        variables.addAll(replacer.variables());
-    }
-
-    public static void register(TCTitleRealTimeReplacer replacer){
-        realTimeReplacers.add(replacer);
-        realTimeReplacersNames.add(replacer.replacerName());
         variables.addAll(replacer.variables());
     }
 
@@ -30,5 +28,5 @@ public class TCTitleForgeReplacerManager {
     }
     public static List<String> getReplacerNames() {return replacersNames;}
     public static List<String> getRealTimeReplacersNames() {return realTimeReplacersNames;}
-    public static List<String> getReplacersVariables() {return variables;}
+    public static List<String> getAllVariables() {return variables;}
 }

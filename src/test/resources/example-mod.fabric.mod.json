@@ -12,6 +12,7 @@
   "icon": "",
   "environment": "Your mod environment",
   "entrypoints": {
+
     "tcreplacer": [
       "salt.mmmjjkx.tcapi.test.Example"
     ],
