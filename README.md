@@ -1,5 +1,6 @@
 # titlechanger-api
-An API of TitleChanger.
+An API of TitleChanger.  
+![ver](https://img.shields.io/maven-central/v/io.github.linsminecraftstudio/titlechanger-api?label=CurrentVersion)
 ## Use it
 The titlechanger-api is already in the Central repository.   
 You can add it as follows:
@@ -10,10 +11,10 @@ repositories {
 
 dependencies {
    //fabric
-   implementation 'io.github.linsminecraftstudio:titlechanger-api:1.0'
+   implementation 'io.github.linsminecraftstudio:titlechanger-api:VERSION'
    
    //forge
-   minecraftLibrary 'io.github.linsminecraftstudio:titlechanger-api:1.0'
+   minecraftLibrary 'io.github.linsminecraftstudio:titlechanger-api:VERSION'
 }
 ```
 You can find it [here (Maven Repository)](https://mvnrepository.com/artifact/io.github.linsminecraftstudio/titlechanger-api).
